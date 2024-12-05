@@ -14,11 +14,15 @@
 
 
 const express = require('express');
-const { signup, login } = require('../controllers/authController');
+const { signup, signin } = require('../controllers/authController'); // Import the controller functions
 
 const router = express.Router();
 
+// Signup route
 router.post('/signup', signup);
-router.post('/login', login);
 
-module.exports = router;
+// Signin route
+router.post('/signin', signin);
+
+module.exports = router; // Export the router
+
