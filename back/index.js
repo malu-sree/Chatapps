@@ -46,6 +46,7 @@ const bodyParser = require('body-parser'); // Make sure you have body-parser ins
 const cookieParser = require('cookie-parser');
 const authRoutes = require('./routes/authRoutes'); // Using CommonJS style import
 const connectToMongoDB = require("./db/connectToMongoDB");
+const messageRoutes=require("./routes/messageRoutes")
 
 dotenv.config(); // Load environment variables
 
@@ -58,6 +59,7 @@ app.use(cookieParser()); // Parse cookies if necessary
 
 // Routes
 app.use('/api/auth', authRoutes);
+app.use("/api/messages",messageRoutes)
 
 // Starting the server
 const PORT = process.env.PORT || 5000;
