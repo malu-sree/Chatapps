@@ -47,10 +47,13 @@ const cookieParser = require('cookie-parser');
 const authRoutes = require('./routes/authRoutes'); // Using CommonJS style import
 const connectToMongoDB = require("./db/connectToMongoDB");
 const messageRoutes=require("./routes/messageRoutes")
+const userRoutes = require("./routes/userRoutes");
+const cors = require("cors");
 
 dotenv.config(); // Load environment variables
 
 const app = express();
+app.use(cors());
 
 // Middleware to parse JSON request bodies
 app.use(express.json());
@@ -60,6 +63,7 @@ app.use(cookieParser()); // Parse cookies if necessary
 // Routes
 app.use('/api/auth', authRoutes);
 app.use("/api/messages",messageRoutes)
+app.use("/api/users", userRoutes);
 
 // Starting the server
 const PORT = process.env.PORT || 5000;
