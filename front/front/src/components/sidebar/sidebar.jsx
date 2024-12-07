@@ -1,5 +1,5 @@
  
-// import LogoutButton from "./LogoutButton";
+ import LogoutButton from "./logoutButton";
 import Conv from "./conv";
 import SearchInput from "./searchInput";
 
@@ -9,7 +9,7 @@ const Sidebar = () => {
 			<SearchInput />
 			<div className='divider px-3'></div>
 			<Conv/>
-			{/* <LogoutButton />  */}
+			<LogoutButton /> 
 		</div>
 	);
 };

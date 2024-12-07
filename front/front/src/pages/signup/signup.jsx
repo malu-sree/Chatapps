@@ -2,7 +2,7 @@ import { Link } from "react-router-dom";
 import GenderCheckbox from "./genderCheckbox";
 import { useState } from "react";
 import useSignup from "../../hooks/useSignup";
-import { Form, Button, Col, Row } from "react-bootstrap";
+import { Form, Button,   } from "react-bootstrap";
 
 const SignUp = () => {
 	const [inputs, setInputs] = useState({
