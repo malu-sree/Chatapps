@@ -14,12 +14,12 @@ const jwt = require("jsonwebtoken");
 // };
 
 const generateTokenAndSetCookie = (userId, res) => {
-	const token = jwt.sign({ userId }, process.env.JWT_SECRET, { expiresIn: '1h' });
+	const token = jwt.sign({ userId }, process.env.JWT_SECRET, { expiresIn: '15d' });
   
 	// Set JWT token in the response cookies
 	res.cookie("jwt", token, {
 	  httpOnly: true, // Makes the cookie accessible only by the server
-	  secure: process.env.NODE_ENV === 'production', // Set to true if using HTTPS
+	  secure: process.env.NODE_ENV !== 'development', // Set to true if using HTTPS
 	  sameSite: 'Strict', // Optional but recommended for CSRF protection
 	});
   };

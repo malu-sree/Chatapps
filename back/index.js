@@ -52,8 +52,15 @@ const cors = require("cors");
 
 dotenv.config(); // Load environment variables
 
+const frontendURL = 'http://localhost:5173';
+
 const app = express();
-app.use(cors());
+app.use(cors({
+  origin: frontendURL,  // Allow only your frontend origin
+  credentials: true,     // Allow cookies to be sent
+  methods: "GET,POST,PUT,DELETE", // Allow necessary HTTP methods
+  allowedHeaders: "Content-Type, Authorization", // Allow necessary headers
+}));
 
 // Middleware to parse JSON request bodies
 app.use(express.json());

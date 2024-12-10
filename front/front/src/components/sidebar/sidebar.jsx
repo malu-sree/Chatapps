@@ -1,16 +1,57 @@
- 
- import LogoutButton from "./logoutButton";
+
+
+// import LogoutButton from "./logoutButton";
+// import Conv from "./conv";
+// import SearchInput from "./searchInput";
+
+// const Sidebar = () => {
+// 	return (
+// 		<div className='bg-light border-end border-slate-500 p-4 d-flex flex-column' style={{ width: "300px", height: "100vh", overflowY: "auto" }}>
+// 			{/* Search Input */}
+// 			<SearchInput />
+			
+// 			{/* Divider */}
+// 			<div className='my-3'>
+// 				<hr />
+// 			</div>
+			
+// 			{/* Conversations */}
+// 			<Conv />
+			
+// 			{/* Logout Button */}
+// 			<LogoutButton />
+// 		</div>
+// 	);
+// };
+
+// export default Sidebar;
+
+
+import LogoutButton from "./logoutButton";
 import Conv from "./conv";
 import SearchInput from "./searchInput";
 
 const Sidebar = () => {
 	return (
-		<div className='border-r border-slate-500 p-4 flex flex-col'>
+		<div 
+			className='bg-light border-end border-slate-500 p-4 d-flex flex-column' 
+			style={{ width: "350px", height: "100vh", overflowY: "auto" }} // Increased width
+		>
+			{/* Search Input */}
 			<SearchInput />
-			<div className='divider px-3'></div>
-			<Conv/>
-			<LogoutButton /> 
+			
+			{/* Divider */}
+			<div className='my-3'>
+				<hr />
+			</div>
+			
+			{/* Conversations */}
+			<Conv />
+			
+			{/* Logout Button */}
+			<LogoutButton />
 		</div>
 	);
 };
+
 export default Sidebar;
